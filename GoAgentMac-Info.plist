@@ -34,5 +34,7 @@
 	<string>YES</string>
 	<key>GoAgentPath</key>
 	<string>proxy.py</string>
+	<key>PythonPath</key>
+	<string>/usr/bin/python</string>
 </dict>
 </plist>

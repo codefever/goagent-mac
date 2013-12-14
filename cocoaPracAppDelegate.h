@@ -17,6 +17,7 @@
 	NSBundle *mainBundle;
 	NSString *goagentPath;
 	NSString *displayOwn;
+    NSString *pythonPath;
 }
 
 @property (assign) IBOutlet NSWindow *window;

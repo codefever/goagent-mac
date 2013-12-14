@@ -1,1 +1,4 @@
-A simple GUI for runing goagent under mac.
+Forked from hewigovens/goagent-mac
+
+Using Homebrew Python, impatitent to see this warning "Load Crypto.Cipher.ARC4 Failed, Use Pure Python Instead.",
+so I add the "PythonPath" configuration in the plist.

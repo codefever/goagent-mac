@@ -44,8 +44,9 @@
 	//goagentPath = [[mainBundle bundlePath] stringByAppendingString:[mainBundle objectForInfoDictionaryKey:@"GoAgentPath"]];
 	goagentPath = [mainBundle objectForInfoDictionaryKey:@"GoAgentPath"];
 	displayOwn = [mainBundle objectForInfoDictionaryKey:@"DisplayOwn"];
-	NSLog(@"%@",displayOwn);
-	[resultTextView setString:@"GoAgent Starting..."];
+    pythonPath = [mainBundle objectForInfoDictionaryKey:@"PythonPath"];
+	NSLog(@"goagentPath=[%@], pythonPath=[%@], displayOwn=[%@]", goagentPath, pythonPath, displayOwn);
+	[resultTextView setString:@"GoAgent Starting...\n"];
 	[self runGoagent];
 	//[self performSelectorInBackground:@selector(runGoagent) withObject:nil];
 	
@@ -78,9 +79,8 @@
 		[cmdTask interrupt];
 	}else {
 		cmdTask =[[NSTask alloc]init];
-		[cmdTask setLaunchPath:@"/usr/bin/python"];
-				
-		NSLog(@"GoAgent Path is %@",goagentPath);
+		[cmdTask setLaunchPath:pythonPath];
+
 		NSArray *args = [NSArray arrayWithObjects:goagentPath,nil];
 		[cmdTask setArguments:args];
 		
@@ -98,6 +98,8 @@
 		
 		[cmdTask launch];
 		[fh readInBackgroundAndNotify];
+        
+        NSLog(@"launch ok");
 	}
 	
 }
