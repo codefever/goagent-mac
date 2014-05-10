@@ -24,7 +24,7 @@
 	if (testItem == nil) {
 		
 		testItem=[[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
-		[testItem setImage:[NSImage imageNamed:@"python-crysta-24"]];
+		[testItem setImage:[NSImage imageNamed:@"python-crystal-24"]];
 		[testItem setHighlightMode:YES];
 	}
 	
